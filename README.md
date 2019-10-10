@@ -10,6 +10,6 @@ However, since we are not pro translators, please help us do a better job!
 
 MoveCastle is a free tutorial for all developers around the world to get a quick start on Libra Move. 
 
-Please help us to broadcast it to the world!
+Please help us broadcast it to the world!
 
 
