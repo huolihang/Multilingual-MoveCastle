@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React from 'react';
 import L1c1 from '../L1C1/L1C1'
 import L6c1 from '../L6C1/L6C1'
 
 
+=======
+﻿import React from 'react';
+import L1c1 from './L1C1/L1C1'
+>>>>>>> origin/dev
 
 const lesson1 = {
     info : {
@@ -28,7 +33,7 @@ const lesson1 = {
         showAnswer: "显示答案",
         hideAnswer: "隐藏答案",
         contitle: ["恭喜完成本章~", "恭喜完成本课~", "精彩还在继续"],
-        concontent: ["点击“继续前进”，迎接新的挑战吧！", "本课到此结束，点击“返回”回到目录页！点击“下一课”继续学习关于Libra的新知识！", "Hi~恭喜你已经完成目前课程的所有内容了~更多课程将不久之后为大家呈现。现在，让我们前往ChainIDE编写自己的Libra Move合约吧！"],
+        concontent: ["点击“继续前进”，迎接新的挑战吧！", "本课到此结束，点击“返回”回到目录页！点击“前往chainide”去chainide中动手实践！", "Hi~恭喜你已经完成目前课程的所有内容了~更多课程将不久之后为大家呈现。现在，让我们前往ChainIDE编写自己的Libra Move合约吧！"],
         concontinue: ["继续前进", "返回", "前往ChainIDE", "下一课"],
         shut: "关闭窗口",
         target: "课程简介",
@@ -63,7 +68,7 @@ const lesson1 = {
         },
         {
             title: "第三章 合约中的main()",
-            instruction: `## 第三章 合约中的\`main()\`\n\n上一章中我们学会了如何建立一个模块，接下来我们要在这个模块的基础上，完善合约的内容。\n\n我们可以在合约中嵌入一段一次性执行的代码，这段代码被称为交易脚本（Transaction Script），并且不能被其他代码调用。交易脚本由\`script:\`作为开始的标识符。\n\n\`main()\`是执行交易脚本的入口。我们将类似\`main()\`形式的代码块称为“过程”，并将在后续章节中详细介绍过程的概念，\`main()\`是一种特殊的过程，它只会被调用一次，且无法被其他过程调用。\n\n注意，包括\`main()\`在内的每个过程都必须以\`return\`结尾，Move编译器非常字面化：它直接翻译源代码，而不会做一些其他的事情，比如插入丢失的\`return\`'。\n\n在编写Move合约的时候，我们通常将所有操作写在普通过程（指除了\`main()\`以外的过程）中，而将普通过程放入模块中，最后在\`script\`部分中导入模块，并以\`main()\`为入口，调用模块中的过程来完成一系列操作，整体思路如下图所示。\n\n<img src=${require("../../static/images/lesson1/pic_1_2_1_zh.png")} style="width:80%;position:relative;left:10%">\n\n\n\n注意，当我们需要在模块中导入其他模块时，导入语句需要出现在模块内部的第一行，也就是\`module 模块名\`的下一行。而当我们需要在\`script\`部分中导入模块时，导入语句出现在\`script\`部分的第一行，也就是\`script: \`的下一行，\`main()\`的前一行。\n\n综上所述，下面就是一个最基本的空合约： \n\n\`\`\`\nmodules: \nmodule Contract {\n\n}\n\nscript: \nimport Transaction.Contract;\nmain() {\n    return;\n}\n\`\`\`\n\n### 实战演习\n\n在已经建立好的\`BuildCastle\`模块基础上，建立一个空合约。\n\n1. 首先添加\`modules: \`和 \`script: \`；\n2. 在\`script\`的下一行添加\`main()\`，记得在\`main()\`中添加\`return\`语句；\n3. 在\`script\`部分中通过\`import\`导入模块（在\`main()\`的前一行）。\n\n`,
+            instruction: `## 第三章 合约中的\`main()\`\n\n上一章中我们学会了如何建立一个模块，接下来我们要在这个模块的基础上，完善合约的内容。\n\n我们可以在合约中嵌入一段一次性执行的代码，这段代码被称为交易脚本（Transaction Script），并且不能被其他代码调用。交易脚本由\`script:\`作为开始的标识符。\n\n\`main()\`是执行交易脚本的入口。我们将类似\`main()\`形式的代码块称为“过程”，并将在后续章节中详细介绍过程的概念，\`main()\`是一种特殊的过程，它只会被调用一次，且无法被其他过程调用。\n\n注意，包括\`main()\`在内的每个过程都必须以\`return\`结尾，Move编译器非常字面化：它直接翻译源代码，而不会做一些其他的事情，比如插入丢失的\`return\`'。\n\n在编写Move合约的时候，我们通常将所有操作写在普通过程（指除了\`main()\`以外的过程）中，而将普通过程放入模块中，最后在\`script\`部分中导入模块，并以\`main()\`为入口，调用模块中的过程来完成一系列操作，整体思路如下图所示。\n\n<img src=${require("../static/images/lesson1/pic_1_2_1_zh.png")} style="width:80%;position:relative;left:10%">\n\n\n\n注意，当我们需要在模块中导入其他模块时，导入语句需要出现在模块内部的第一行，也就是\`module 模块名\`的下一行。而当我们需要在\`script\`部分中导入模块时，导入语句出现在\`script\`部分的第一行，也就是\`script: \`的下一行，\`main()\`的前一行。\n\n综上所述，下面就是一个最基本的空合约： \n\n\`\`\`\nmodules: \nmodule Contract {\n\n}\n\nscript: \nimport Transaction.Contract;\nmain() {\n    return;\n}\n\`\`\`\n\n### 实战演习\n\n在已经建立好的\`BuildCastle\`模块基础上，建立一个空合约。\n\n1. 首先添加\`modules: \`和 \`script: \`；\n2. 在\`script\`的下一行添加\`main()\`，记得在\`main()\`中添加\`return\`语句；\n3. 在\`script\`部分中通过\`import\`导入模块（在\`main()\`的前一行）。\n\n`,
             type: 0, 
             codes:[ 
                 {
@@ -172,7 +177,7 @@ const lesson2 = {
         },
         {
             title: "第六章 完善城堡设计",
-            instruction: `## 第六章 完善城堡设计\n\n在第三章中我们学习了如何声明一个结构体，本章中我们将继续学习如何初始化一个结构体，并在\`main()\`过程中使用它。\n\n如下图所示，我们往往通过构造一个过程来实现结构体的初始化，并将结构体的声明与初始化过程写入同一个模块中，用于初始化结构体的过程所对应的返回值类型是结构体类型，并通过返回一个成员变量为初始值的结构体来实现结构体的初始化。\n\n<img src=${require("../../static/images/lesson2/pic_2_6_1_zh.png")} style="width:80%;position:relative;left:10%">\n\n例如：\n\n\`\`\`\nmodule Bar {\n    struct T {\n        baz: u64\n    }\n    public new(m: u64) : Self.T {\n        return T {\n            baz: move(m)\n        };\n    }\n}\n\n\`\`\`\n\n在这个例子中，我们在模块\`Bar\`中声明了一个结构体\`T\`，并通过名为\`new\`的过程将结构体的成员变量初始化为该过程的参数。\n\n在\`new\`过程中，我们返回了一个结构体\`T\`，其成员变量\`baz\`的值是该过程的参数\`m\`。\n\n注意，上述代码中Line 6 ~ Line 8形式上很像结构体的定义，但它是一个\`return\`语句，因此句末有一个分号。\n\n当我们要在\`main()\`过程或其他过程中使用结构体\`T\`时，可以通过\`let\`关键字将变量声明为结构体类型，并调用\`new\`过程进行初始化。\n\n例如：以下代码将变量\`x\`初始化为成员变量值等于10的结构体\`T\`：\n\n\`\`\`\nlet x: Bar.T;\nx = Bar.new(10)\n\n\`\`\`\n\n### 实战演习\n\n在之前的章节中，我们学习了**如何建立一个合约**，**Move中的模块**、**变量与数据类型及其所有权**，**Move中的过程及多返回值过程**，**Move中的程序结构**，**结构体的建立和使用**，**Move中的常用运算符** 等知识点，现在我们已经完成了建立城堡所需要的几个重要过程，接下来要把它们组合起来，并在\`main()\`过程中实现城堡的建立。\n\n1. 在\`BuildCastle\`模块中添加\`newCastle\`过程，用于初始化一个结构体\`Castle\`类型的变量，该过程有两个参数：\n\n   - \`_name (bytearray)\`：城堡名\n   - \`_SerialNum (u64)\`：城堡序列号\n\n   注意：为了与\`main()\`中的\`name\`和\`SerialNum\`有所区分，我们在参数名的前面加了下划线。\n\n   该过程有一个返回值，类型为\`Self.Castle\`。\n\n   请模仿课程中的示例，在该过程中根据上述参数（\`_name\`, \`_SerialNum\`）完成一个城堡数据的初始化。\n\n   提示：城堡的名字和序列号初始化为参数对应的值，城堡的等级初始化为1，城堡的经济实力和军事实力初始化为调用\`racial_judgment()\`过程所计算出的值。\n\n2. 在\`main()\`过程中，城堡的名字是由用户输入的，因此\`name\`这一参数是外部输入，我们需要给\`main()\`过程添加一个名为\`name\`的参数，其类型为\`bytearray\`。\n\n3. 在\`main()\`中添加\`castle\`变量并初始化，提醒：要记得把\`let\`语句插入到前面。\n\n`
+            instruction: `## 第六章 完善城堡设计\n\n在第三章中我们学习了如何声明一个结构体，本章中我们将继续学习如何初始化一个结构体，并在\`main()\`过程中使用它。\n\n如下图所示，我们往往通过构造一个过程来实现结构体的初始化，并将结构体的声明与初始化过程写入同一个模块中，用于初始化结构体的过程所对应的返回值类型是结构体类型，并通过返回一个成员变量为初始值的结构体来实现结构体的初始化。\n\n<img src=${require("../static/images/lesson2/pic_2_6_1_zh.png")} style="width:80%;position:relative;left:10%">\n\n例如：\n\n\`\`\`\nmodule Bar {\n    struct T {\n        baz: u64\n    }\n    public new(m: u64) : Self.T {\n        return T {\n            baz: move(m)\n        };\n    }\n}\n\n\`\`\`\n\n在这个例子中，我们在模块\`Bar\`中声明了一个结构体\`T\`，并通过名为\`new\`的过程将结构体的成员变量初始化为该过程的参数。\n\n在\`new\`过程中，我们返回了一个结构体\`T\`，其成员变量\`baz\`的值是该过程的参数\`m\`。\n\n注意，上述代码中Line 6 ~ Line 8形式上很像结构体的定义，但它是一个\`return\`语句，因此句末有一个分号。\n\n当我们要在\`main()\`过程或其他过程中使用结构体\`T\`时，可以通过\`let\`关键字将变量声明为结构体类型，并调用\`new\`过程进行初始化。\n\n例如：以下代码将变量\`x\`初始化为成员变量值等于10的结构体\`T\`：\n\n\`\`\`\nlet x: Bar.T;\nx = Bar.new(10)\n\n\`\`\`\n\n### 实战演习\n\n在之前的章节中，我们学习了**如何建立一个合约**，**Move中的模块**、**变量与数据类型及其所有权**，**Move中的过程及多返回值过程**，**Move中的程序结构**，**结构体的建立和使用**，**Move中的常用运算符** 等知识点，现在我们已经完成了建立城堡所需要的几个重要过程，接下来要把它们组合起来，并在\`main()\`过程中实现城堡的建立。\n\n1. 在\`BuildCastle\`模块中添加\`newCastle\`过程，用于初始化一个结构体\`Castle\`类型的变量，该过程有两个参数：\n\n   - \`_name (bytearray)\`：城堡名\n   - \`_SerialNum (u64)\`：城堡序列号\n\n   注意：为了与\`main()\`中的\`name\`和\`SerialNum\`有所区分，我们在参数名的前面加了下划线。\n\n   该过程有一个返回值，类型为\`Self.Castle\`。\n\n   请模仿课程中的示例，在该过程中根据上述参数（\`_name\`, \`_SerialNum\`）完成一个城堡数据的初始化。\n\n   提示：城堡的名字和序列号初始化为参数对应的值，城堡的等级初始化为1，城堡的经济实力和军事实力初始化为调用\`racial_judgment()\`过程所计算出的值。\n\n2. 在\`main()\`过程中，城堡的名字是由用户输入的，因此\`name\`这一参数是外部输入，我们需要给\`main()\`过程添加一个名为\`name\`的参数，其类型为\`bytearray\`。\n\n3. 在\`main()\`中添加\`castle\`变量并初始化，提醒：要记得把\`let\`语句插入到前面。\n\n`
 ,
             type: 0, 
             codes:[ 
@@ -232,7 +237,12 @@ const lesson3 = {
         },
         {
             title: "第四章 资源的使用",
+<<<<<<< HEAD
             instruction: `## 第四章 资源的使用\n\n在建立了资源之后，我们就可以使用资源啦。\n\n资源的使用与结构体几乎一样，不同的地方在于，我们需要在使用完资源后，销毁该资源。\n\n在本章中，我们假设仅在当前交易脚本中使用资源，暂时不把资源发送给某个地址，因此在\`main()\`结束前需要销毁资源。\n\n接下来，我们结合一个例子来理解资源的使用，并复习资源的建立与销毁。\n\n\`\`\`\nmodules:\nmodule MoneyHolder {\n        import 0x0.LibraCoin;\n        resource T { money: LibraCoin.T }\n        public new(m: LibraCoin.T): Self.T {\n            return T{ money: move(m) };\n        }\n        public destroy_t(t: Self.T) {\n            let money: LibraCoin.T;\n            T{ money } = move(t);\n            LibraCoin.destroy_zero(move(money));\n            return;\n        }\n}\nscript:\nimport Transaction.MoneyHolder;\nimport 0x0.LibraCoin;\nmain() {\n    let coin: LibraCoin.T;\n    let money_holder: MoneyHolder.T;\n    coin = LibraCoin.zero();\n    money_holder = MoneyHolder.new(move(coin));\n    MoneyHolder.destroy_t(move(money_holder));\n    return;\n}\n\n\`\`\`\n\n在该实例中，我们声明了一个\`MoneyHolder\`模块，该模块中有一个资源\`T\`，该资源通过Line 5的过程建立，并通过Line 8的过程销毁。\n\n需要注意的是，资源T的成员变量也是一个资源。因此，在销毁\`T\`的时候，需要进行两次销毁（即Line 10和Line 11），其中，第二次销毁是调用了\`LibraCoin\`模块中销毁\`coin\`的过程\`LibraCoin.destroy_zero()\`。这些内容是前两章中所涉及的知识点，如果有所遗忘请及时复习。\n\n接下来，我们看该实例的\`script\`部分，\`main()\`过程中的前两行分别声明了两个资源变量，其中一个是\`LibraCoin.T\`，另一个是我们自己声明的\`MoneyHolder.T\`。在声明变量之后，我们随之要进行变量的初始化，因为未经初始化的变量无法被使用。\n\nLine 21中的\` LibraCoin.zero()\`是\`LibraCoin.T\`这一资源的初始化过程，该过程被定义在Libra官方的\`LibraCoin\`模块中，在此不进行分析。\n\nLine 22中的\`MoneyHolder.new(move(coin))\`是我们定义的建立资源过程，在通过该过程初始化\`money_holder\`后，就可以使用该变量啦。\n\n注意：这里的参数是\`move(coin)\`，而不是\`copy(coin)\`，即便在后面的内容中仍然想使用\`coin\`这一变量，我们依旧不能使用\`copy()\`，因为\`coin\`是资源，而资源只能\`move()\`，不能\`copy()\`。\n\n在本实例中，我们不对\`money_holder\`进行操作，因此接下来就需要销毁它，从而结束合约。注意，这里过程中的参数同样是要使用\`move()\`，而不能使用\`copy()\`。\n\n总体来说，使用资源的完整流程，是先通过\`let\`声明资源变量，再调用建立资源的过程初始化该变量，使用完以后调用销毁资源的过程来销毁变量，如下图所示。\n\n### 实战演习\n\n在前面的章节中，我们已经完成了城堡的建立和销毁过程，但此时该合约仍然无法顺利编译成功的，因为我们还需要在\`main()\`中完善资源的建立和销毁。\n\n注：由于账户资源暂时没有实际作用，我们先不在\`main()\`中调用它。如果需要使用\`CastleAccount\`资源，我们可以通过\`newAccount\`和\`desAccount\`来创建和销毁它。\n\n1. 在\`main()\`中加入销毁\`Castle\`资源的语句。`,
+=======
+            instruction: `## 第四章 资源的使用\n\n在建立了资源之后，我们就可以使用资源啦。\n\n资源的使用与结构体几乎一样，不同的地方在于，我们需要在使用完资源后，销毁该资源。\n\n在本章中，我们假设仅在当前交易脚本中使用资源，暂时不把资源发送给某个地址，因此在\`main()\`结束前需要销毁资源。\n\n接下来，我们结合一个例子来理解资源的使用，并复习资源的建立与销毁。\n\n\`\`\`\nmodules:\nmodule MoneyHolder {\n        import 0x0.LibraCoin;\n        resource T { money: LibraCoin.T }\n        public new(m: LibraCoin.T): Self.T {\n            return T{ money: move(m) };\n        }\n        public destroy_t(t: Self.T) {\n            let money: LibraCoin.T;\n            T{ money } = move(t);\n            LibraCoin.destroy_zero(move(money));\n            return;\n        }\n}\nscript:\nimport Transaction.MoneyHolder;\nimport 0x0.LibraCoin;\nmain() {\n    let coin: LibraCoin.T;\n    let money_holder: MoneyHolder.T;\n    coin = LibraCoin.zero();\n    money_holder = MoneyHolder.new(move(coin));\n    MoneyHolder.destroy_t(move(money_holder));\n    return;\n}\n\n\`\`\`\n\n在该实例中，我们声明了一个\`MoneyHolder\`模块，该模块中有一个资源\`T\`，该资源通过Line 5的过程建立，并通过Line 8的过程销毁。\n\n需要注意的是，资源T的成员变量也是一个资源。因此，在销毁\`T\`的时候，需要进行两次销毁（即Line 10和Line 11），其中，第二次销毁是调用了\`LibraCoin\`模块中销毁\`coin\`的过程\`LibraCoin.destroy_zero()\`。这些内容是前两章中所涉及的知识点，如果有所遗忘请及时复习。\n\n接下来，我们看该实例的\`script\`部分，\`main()\`过程中的前两行分别声明了两个资源变量，其中一个是\`LibraCoin.T\`，另一个是我们自己声明的\`MoneyHolder.T\`。在声明变量之后，我们随之要进行变量的初始化，因为未经初始化的变量无法被使用。\n\nLine 21中的\` LibraCoin.zero()\`是\`LibraCoin.T\`这一资源的初始化过程，该过程被定义在Libra官方的\`LibraCoin\`模块中，在此不进行分析。\n\nLine 22中的\`MoneyHolder.new(move(coin))\`是我们定义的建立资源过程，在通过该过程初始化\`money_holder\`后，就可以使用该变量啦。\n\n注意：这里的参数是\`move(coin)\`，而不是\`copy(coin)\`，即便在后面的内容中仍然想使用\`coin\`这一变量，我们依旧不能使用\`copy()\`，因为\`coin\`是资源，而资源只能\`move()\`，不能\`copy()\`。\n\n在本实例中，我们不对\`money_holder\`进行操作，因此接下来就需要销毁它，从而结束合约。注意，这里过程中的参数同样是要使用\`move()\`，而不能使用\`copy()\`。\n\n总体来说，使用资源的完整流程，是先通过\`let\`声明资源变量，再调用建立资源的过程初始化该变量，使用完以后调用销毁资源的过程来销毁变量，如下图所示。\n\n<img src=${require("../static/images/lesson3/pic_3_4_1_zh.png")} style="width:80%;position:relative;left:10%">\n\n\n\n### 实战演习\n\n在前面的章节中，我们已经完成了城堡的建立和销毁过程，但此时该合约仍然无法顺利编译成功的，因为我们还需要在\`main()\`中完善资源的建立和销毁。\n\n注：由于账户资源暂时没有实际作用，我们先不在\`main()\`中调用它。如果需要使用\`CastleAccount\`资源，我们可以通过\`newAccount\`和\`desAccount\`来创建和销毁它。\n\n1. 在\`main()\`中加入销毁\`Castle\`资源的语句。\n\n`
+,
+>>>>>>> origin/dev
             type: 0, 
             codes:[ 
                 {
@@ -270,6 +280,7 @@ const lesson3 = {
     ]
 }
 
+<<<<<<< HEAD
 const lesson4 = {
     lessonserial: "第4课",
     title: "",
@@ -666,6 +677,9 @@ const lesson6 = {
 
 
 const lessons = [lesson1, lesson2, lesson3, lesson4, lesson5, lesson6];
+=======
+const lessons = [lesson1, lesson2, lesson3];
+>>>>>>> origin/dev
 
 export default lessons;
 
